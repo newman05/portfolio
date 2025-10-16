@@ -5,13 +5,13 @@ import { useEffect, useRef, useState } from "react";
 const projects = [
   {
     title: "PdfParse",
-    description: "A minimalist e-commerce platform with seamless user experience.",
+    description: "A webtool that parses PDF files into a structured format, with an interactive chatbot.",
     tags: ["Next.js", "TypeScript", "TailwindCSS", "tRPC", "Prisma"],
     link: "https://github.com/newman05/pdfparse",
   },
   {
     title: "ForumSite",
-    description: "Real-time collaboration tool for remote teams.",
+    description: "A discussion forum web application with user authentication and real-time updates.",
     tags: ["Next.js", "TypeScript", "Upstash Redis", "TailwindCSS", "NextAuth"],
     link: "https://github.com/newman05/forumsite",
   },
