@@ -8,7 +8,10 @@ import Profiles from "@/components/Profiles";
 export default function Home() {
   return (
     <>
+      {/* Navigation bar */}
+      
       <Navbar />
+
       <main className="relative">
         <Hero />
         <About />
