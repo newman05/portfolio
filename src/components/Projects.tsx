@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from 'next/image';
 
 const projects = [
   {
@@ -22,6 +23,7 @@ export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const element = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -31,13 +33,13 @@ export default function Projects() {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, []);
@@ -69,7 +71,7 @@ export default function Projects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group block border border-gray-800 p-8 hover:border-white transition-all duration-500 ${
+                className={`group block relative border border-gray-800 p-8 hover:border-white transition-all duration-500 ${
                   isVisible
                     ? "opacity-100 translate-x-0"
                     : "opacity-0 -translate-x-10"
@@ -78,6 +80,17 @@ export default function Projects() {
                   transitionDelay: isVisible ? `${index * 150}ms` : "0ms",
                 }}
               >
+                {project.title === "PdfParse" && (
+                  <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
+                    <Image src="/parseblur.png" alt="" fill className="object-cover" priority={false} />
+                  </div>
+                )}
+
+                {project.title === "ForumSite" && (
+                  <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
+                    <Image src="/newfr.png" alt="" fill className="object-cover" priority={false} />
+                  </div>
+                )}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
                   <h3 className="text-2xl md:text-3xl font-light tracking-wide group-hover:text-gray-300 transition-colors">
                     {project.title}

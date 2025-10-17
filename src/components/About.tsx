@@ -55,7 +55,7 @@ export default function About() {
               </p>
 
               <p className="leading-relaxed">
-                Apart from coding, I enjoy speedcubing, vibing to classic DHH tracks and keeping up with new tech.
+                Apart from coding, I enjoy speedcubing, vibing to DHH tracks and keeping up with new tech.
 
               </p>
             </div>
